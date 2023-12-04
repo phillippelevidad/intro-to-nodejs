@@ -1,7 +1,8 @@
 import { got } from "got";
+import { log, error } from "./logs.js";
+import { categories } from "./categories.js";
 
 const API = "http://localhost:3000";
-const categories = ["confectionery", "electronics"];
 
 export async function add(...args) {
   let [category, id, name, amount, info] = args;
@@ -63,16 +64,7 @@ export async function listCategoryItems(category) {
       );
     }
   } catch (err) {
-    console.log(err.message);
+    error(err.message);
     process.exit(1);
   }
-}
-
-function log(msg) {
-  console.log(`${msg}\n`);
-}
-
-function error(msg) {
-  const bgRed = chalk.bgRgb(231, 76, 60);
-  console.log(`${bgRed.inverse("⚠️ Error:")}\n${txRed(msg)}\n`);
 }
