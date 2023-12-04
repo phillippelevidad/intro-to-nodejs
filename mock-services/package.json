@@ -1,0 +1,16 @@
+{
+  "name": "mock-services",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "static": "serve -p 5050 static"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^4.24.3",
+    "fastify-cli": "^5.9.0"
+  }
+}
